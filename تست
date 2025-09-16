@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>متجر إلكتروني عربي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Tajawal', Arial, sans-serif; background: #f7f7f7; margin: 0; padding: 0; }
+    header { background: #00897b; color: #fff; text-align: center; padding: 2rem 1rem 1rem; }
+    h1 { margin: 0; font-size: 2.2rem; }
+    .container { max-width: 800px; margin: 2rem auto; background: #fff; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,0.04); padding: 2rem; }
+    .products { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
+    .product { background: #f1f1f1; border-radius: 10px; width: 230px; padding: 1rem; display: flex; flex-direction: column; align-items: center; box-shadow: 0 2px 4px rgba(0,137,123,0.06);}
+    .product img { width: 120px; height: 120px; object-fit: contain; border-radius: 8px; margin-bottom: 1rem;}
+    .product-title { font-size: 1.1rem; margin: 0.5rem 0; }
+    .product-price { color: #00897b; font-weight: bold; margin-bottom: 1rem; }
+    .order-btn { background: #00897b; color: #fff; border: none; border-radius: 7px; padding: 0.5rem 1rem; font-size: 1rem; cursor: pointer; transition: background 0.2s;}
+    .order-btn:hover { background: #00695c;}
+    footer { text-align: center; color: #888; margin: 2rem 0 0 0;}
+    @media (max-width:600px){
+      .products{flex-direction:column; align-items:center;}
+      .container{padding:1rem;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>متجر إلكتروني عربي</h1>
+    <p>منتجات مختارة، اطلب الآن عبر الواتساب!</p>
+  </header>
+  <div class="container">
+    <div class="products">]
+      <div class="product">
+        <img src="https://i.imgur.com/7yUvePI.png" alt="ساعة ذكية">
+        <div class="product-title">ساعة ذكية</div>
+        <div class="product-price">150 ريال</div>
+        <button class="order-btn" onclick="orderWhatsApp('ساعة ذكية', 150)">اطلب عبر واتساب</button>
+      </div>
+      <div class="product">
+        <img src="https://i.imgur.com/4zQ8K6p.png" alt="سماعة بلوتوث">
+        <div class="product-title">سماعة بلوتوث</div>
+        <div class="product-price">85 ريال</div>
+        <button class="order-btn" onclick="orderWhatsApp('سماعة بلوتوث', 85)">اطلب عبر واتساب</button>
+      </div>
+      <div class="product">
+        <img src="https://i.imgur.com/PvISc5I.png" alt="حقيبة يد جلدية">
+        <div class="product-title">حقيبة يد جلدية</div>
+        <div class="product-price">120 ريال</div>
+        <button class="order-btn" onclick="orderWhatsApp('حقيبة يد جلدية', 120)">اطلب عبر واتساب</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    جميع الحقوق محفوظة &copy; متجرك 2025
+  </footer>
+  <script>
+    function orderWhatsApp(product, price) {
+      var phone = "9665XXXXXXXX"; // ← ضع رقمك بدون "+" وأول صفر
+      var msg = encodeURIComponent("مرحباً، أود طلب: " + product + " بسعر " + price + " ريال. الرجاء تزويدي بطريقة الدفع والتوصيل.");
+      window.open("https://wa.me/" + phone + "?text=" + msg, "_blank");
+    }
+  </script>
+</body>
+</html>
